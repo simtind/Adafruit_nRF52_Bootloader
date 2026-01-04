@@ -34,7 +34,7 @@
  *------------------------------------------------------------------*/
 #define LEDS_NUMBER       1
 #define LED_PRIMARY_PIN   _PINNUM(1, 11) // Blue
-#define LED_STATE_ON      1
+#define LED_STATE_ON      0
 
 /*------------------------------------------------------------------*/
 /* BUTTON
