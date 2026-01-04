@@ -258,10 +258,13 @@ if (DEFINED ANT_LICENSE_KEY)
   target_compile_definitions(bootloader PUBLIC ANT_LICENSE_KEY=${ANT_LICENSE_KEY})
 endif()
 
-#----------------------------------
-# Get UF2 version from git
-#----------------------------------
-execute_process(COMMAND git describe --dirty --always --tags OUTPUT_VARIABLE GIT_VERSION)
+if (NOT DEFINED GIT_VERSION)
+  #----------------------------------
+  # Get UF2 version from git
+  #----------------------------------
+  execute_process(COMMAND git describe --dirty --always --tags OUTPUT_VARIABLE GIT_VERSION)
+endif()
+
 string(STRIP ${GIT_VERSION} GIT_VERSION)
 
 string(REPLACE "-" ";" RELEASE_VERSION ${GIT_VERSION})
