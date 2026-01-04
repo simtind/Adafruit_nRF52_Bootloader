@@ -315,7 +315,7 @@ add_custom_target(flash-mbr
   )
 
 add_custom_target(flash-erase
-  COMMAND ${NRFJPROG} -f nrf52 --eraseall
+  COMMAND ${NRFJPROG} -f nrf52 --recover
   )
 
 add_custom_target(flash-all
